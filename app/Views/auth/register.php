@@ -19,8 +19,7 @@
                             ?>
                             <?php echo form_open('auth/save_register'); ?>  
                                 <div class="form-group">
-                                    <input type="text" role="alert" name="nama_user" class="form-control <?= ($errors->hasError('nama_user')) ? 'is-invalid' : ''; ?>" id="exampleInputEmail"
-                                        placeholder="Username">
+                                    <input type="text" role="alert" name="nama_user" class="form-control <?= ($errors->hasError('nama_user')) ? 'is-invalid' : ''; ?>" id="exampleInputEmail" placeholder="Nama pengguna" autocomplete="off">
                                     <div class="invalid-feedback">
                                         <?= $errors->getError('nama_user'); ?>
                                     </div>

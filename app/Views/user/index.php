@@ -27,7 +27,7 @@
       <?php } ?>
 
       <?php if(session()->get('level')==3){?>
-        <a href="<?= base_url('menu/menu_pengunjung')?>">
+        <a href="<?= base_url('menu/dashboard_penumpang')?>">
         <h1 class="h3 mb-4 text-gray-800">MENU Pengunjung 1</h1>
       <?php } ?>
      
