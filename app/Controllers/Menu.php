@@ -26,7 +26,8 @@ class Menu extends BaseController
     if(session()->get('level')<>3){
       return redirect()->to(base_url('auth/login'));
     }
-    return view('user/v_pengunjung');
+    $data['title'] = 'Dashboard';
+    return view('user/v_pengunjung', $data);
   }
 
 	public function jadwal_penumpang(){
