@@ -30,32 +30,44 @@ class Menu extends BaseController
     return view('user/v_pengunjung', $data);
   }
 
-	public function jadwal_penumpang(){
+	public function bus_penumpang(){
     if(session()->get('level')<>3){
       return redirect()->to(base_url('home/user'));
     }
-    return view('user/v_pengunjungJadwal');
+    $data['title'] = 'Bus';
+    return view('user/v_pengunjungBus', $data);
 	}
 
 	public function kupon_penumpang(){
     if(session()->get('level')<>3){
       return redirect()->to(base_url('home/user'));
     }
-    return view('user/v_pengunjungKupon');
+    $data['title'] = 'Kupon';
+    return view('user/v_pengunjungKupon', $data);
 	}
 
 	public function informasi_penumpang(){
     if(session()->get('level')<>3){
       return redirect()->to(base_url('home/user'));
     }
-    return view('user/v_pengunjungInformasi');
+    $data['title'] = 'Informasi';
+    return view('user/v_pengunjungInformasi', $data);
 	}
+
+  public function bantuan_penumpang(){
+    if(session()->get('level')<>3){
+      return redirect()->to(base_url('home/user'));
+    }
+    $data['title'] = 'Bantuan';
+    return view('user/v_pengunjungBantuan', $data);
+  }
 
 	public function profil_penumpang(){
     if(session()->get('level')<>3){
       return redirect()->to(base_url('home/user'));
     }
-    return view('user/v_pengunjungProfil');
+    $data['title'] = 'Profil';
+    return view('user/v_pengunjungProfil', $data);
 	}
 
 }

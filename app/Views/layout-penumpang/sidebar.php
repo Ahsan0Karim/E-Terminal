@@ -19,27 +19,77 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nfbar" href="<?php echo site_url('menu/jadwal_penumpang'); ?>">
-              Jadwal
+            <?php
+              if($title == 'Bus'){
+            ?>
+              <a class="nav-link active nfbar" aria-current="page" href="<?php echo site_url('menu/bus_penumpang'); ?>">
+            <?php
+              }else{
+            ?>
+              <a class="nav-link nfbar" aria-current="page" href="<?php echo site_url('menu/bus_penumpang'); ?>">
+            <?php
+              }
+            ?>
+              Bus
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nfbar" href="<?php echo site_url('menu/kupon_penumpang'); ?>">
+            <?php
+              if($title == 'Kupon'){
+            ?>
+              <a class="nav-link active nfbar" aria-current="page" href="<?php echo site_url('menu/kupon_penumpang'); ?>">
+            <?php
+              }else{
+            ?>
+              <a class="nav-link nfbar" aria-current="page" href="<?php echo site_url('menu/kupon_penumpang'); ?>">
+            <?php
+              }
+            ?>
               Kupon <span class="badge text-bg-info" style="margin-left:6px;">2</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nfbar" href="<?php echo site_url('menu/informasi_penumpang'); ?>">
+            <?php
+              if($title == 'Informasi'){
+            ?>
+              <a class="nav-link active nfbar" aria-current="page" href="<?php echo site_url('menu/informasi_penumpang'); ?>">
+            <?php
+              }else{
+            ?>
+              <a class="nav-link nfbar" aria-current="page" href="<?php echo site_url('menu/informasi_penumpang'); ?>">
+            <?php
+              }
+            ?>
               Informasi
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nfbar" href="<?php echo site_url('menu/informasi_penumpang'); ?>">
+            <?php
+              if($title == 'Bantuan'){
+            ?>
+              <a class="nav-link active nfbar" aria-current="page" href="<?php echo site_url('menu/bantuan_penumpang'); ?>">
+            <?php
+              }else{
+            ?>
+              <a class="nav-link nfbar" aria-current="page" href="<?php echo site_url('menu/bantuan_penumpang'); ?>">
+            <?php
+              }
+            ?>
               Bantuan
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nfbar" href="<?php echo site_url('menu/profil_penumpang'); ?>">
+            <?php
+              if($title == 'Profil'){
+            ?>
+              <a class="nav-link active nfbar" aria-current="page" href="<?php echo site_url('menu/profil_penumpang'); ?>">
+            <?php
+              }else{
+            ?>
+              <a class="nav-link nfbar" aria-current="page" href="<?php echo site_url('menu/profil_penumpang'); ?>">
+            <?php
+              }
+            ?>
               Profil
             </a>
           </li>
