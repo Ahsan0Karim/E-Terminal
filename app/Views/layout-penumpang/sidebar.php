@@ -45,7 +45,7 @@
             <?php
               }
             ?>
-              Kupon <span class="badge text-bg-info" style="margin-left:6px;">2</span>
+              Kupon <!--<span class="badge text-bg-info" style="margin-left:6px;">2</span>-->
             </a>
           </li>
           <li class="nav-item">

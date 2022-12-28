@@ -5,6 +5,6 @@
     <h1 class="h2" style="margin:10px 0px 16px 0px;">Kupon</h1>
   </div>
   <div class="alert alert-primary" role="alert">
-    Beli tiket bus menggunakan website ini, <a href="#">Klik disini!</a>
+    Cek jadwal bus menggunakan website ini, <a href="<?php echo site_url('menu/bus_penumpang'); ?>">Klik disini!</a>
   </div>
 <?= $this->include('layout-penumpang/footer') ?>

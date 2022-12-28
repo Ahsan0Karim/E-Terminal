@@ -5,15 +5,13 @@
     <h1 class="h2" style="margin:10px 0px 16px 0px;">Dashboard</h1>
   </div>
   <div class="alert alert-primary" role="alert">
-    Beli tiket bus menggunakan website ini, <a href="#">Klik disini!</a>
+    Cek jadwal bus menggunakan website ini, <a href="<?php echo site_url('menu/bus_penumpang'); ?>">Klik disini!</a>
   </div>
   <div class="card" style="margin-top:24px !important;">
     <h5 class="card-header" style="padding:16px;">Informasi</h5>
     <div class="card-body">
-      <h5 class="card-title">Rute Surabaya - Merauke ditunda</h5>
-      <span style="font-size:14px;color:#777;">10:00 AM, 14 Desember 2022</span>
-      <p class="card-text" style="margin-top:10px;width:700px;">Bus keberangkatan dari Surabaya ke Merauke ditunda dikarenakan ada permasalahan internal antara supir dengan kondektur. Informasi selanjutnya akan diberitahukan segera.</p>
-      <a href="#" class="btn btn-primary">Selengkapnya</a>
+      <p class="card-text" style="width:700px;">Untuk melihat semua informasi dan pengumuman bisa klik tombol "Selengkapnya"</p>
+      <a href="<?php echo site_url('menu/informasi_penumpang'); ?>" class="btn btn-primary">Selengkapnya</a>
     </div>
   </div>
   <div class="card jadwal" style="margin-top:40px !important;margin-bottom:40px;">
@@ -31,30 +29,24 @@
       </ul>
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+        <?php
+          $no =1;
+          foreach($jadwal as $key => $value){ ?>
           <div class="menunggu1">
-            <h5>Mojokerto - Jombang</h5>
-            <h6 style="color:#777;font-weight:normal;">Harapan Jaya</h6>
-            <p style="font-weight:normal;margin-bottom:20px;">Terminal Mojokerto - <b>Waktu berangkat: 02:00 PM</b></p>
+            <h5><?= $value['awal_terminal']; ?> -> <?= $value['tujuan']; ?></h5>
+            <h6 style="color:#777;font-weight:normal;">Kondektur: <?= $value['nama_kondektur']; ?></h6>
+            <p style="font-weight:normal;margin-bottom:20px;">Terminal <?= $value['awal_terminal']; ?> - <b>Waktu berangkat: <?= $value['waktu']; ?></b></p>
           </div>
-          <hr style="opacity:20% !important;">
-          <div class="menunggu2">
-            <h5>Madiun - Magetan</h5>
-            <h6 style="color:#777;font-weight:normal;">Budi Berdjaja</h6>
-            <p style="font-weight:normal;">Terminal Madiun - <b>Waktu berangkat: 04:00 PM</b></p>
-          </div>
+        <?php } ?>
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-          <div class="berangkat">
-            <h5>Surabaya - Jombang</h5>
-            <h6 style="color:#777;font-weight:normal;">Cahaya Ilahi</h6>
-            <p style="font-weight:normal;margin-bottom:20px;">Menuju ke Terminal Jombang - <b>Keberangkatan: 11:00 AM, Perkiraan sampai: 01:00 PM</b></p>
+          <div class="menunggu1">
+            <h5>Belum ada bus yang berangkat~</h5>
           </div>
         </div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-          <div class="batal">
-            <h5>Surabaya - Merauke</h5>
-            <h6 style="color:#777;font-weight:normal;">Ajur Tenan</h6>
-            <p style="font-weight:normal;margin-bottom:20px;">Dibatalkan karena ada masalah internal antara kondektur dan supir.</p>
+          <div class="menunggu1">
+            <h5>Belum ada bus yang dibatalkan~</h5>
           </div>
         </div>
       </div>
@@ -68,7 +60,7 @@
       <a href="<?php echo site_url('menu/bantuan_penumpang'); ?>">Selengkapnya</a>
     </div>
   </div>
-  <div class="accordion" id="accordionExample" style="margin-bottom:60px;">
+  <div class="accordion" id="accordionExample" style="margin-bottom:100px;">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

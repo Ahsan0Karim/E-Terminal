@@ -1,11 +1,18 @@
 <?php namespace App\Controllers;
-
+use App\Models\ModelInformasi;
+use App\Models\ModelJadwal;
 class Menu extends BaseController
 {
+
+  public function __construct(){
+    $this->ModelInformasi = new ModelInformasi();
+    $this->ModelJadwal = new ModelJadwal();
+  }
 	
   // ADMIN
 	public function menu_admin(){
-    return view('user/v_admin');
+    $data['title'] = 'Dashboard';
+    return view('user/v_admin', $data);
 	}
 
   // FITUR ADMIN
@@ -26,7 +33,11 @@ class Menu extends BaseController
     if(session()->get('level')<>3){
       return redirect()->to(base_url('auth/login'));
     }
-    $data['title'] = 'Dashboard';
+    $data = array(
+      'informasi' => $this->ModelInformasi->all_data(),
+      'jadwal' => $this->ModelJadwal->all_data(),
+      'title' => 'Dashboard'
+    );
     return view('user/v_pengunjung', $data);
   }
 
@@ -34,7 +45,10 @@ class Menu extends BaseController
     if(session()->get('level')<>3){
       return redirect()->to(base_url('home/user'));
     }
-    $data['title'] = 'Bus';
+    $data = array(
+      'jadwal' => $this->ModelJadwal->all_data(),
+      'title' => 'Bus'
+    );
     return view('user/v_pengunjungBus', $data);
 	}
 
@@ -50,7 +64,10 @@ class Menu extends BaseController
     if(session()->get('level')<>3){
       return redirect()->to(base_url('home/user'));
     }
-    $data['title'] = 'Informasi';
+    $data = array(
+      'informasi' => $this->ModelInformasi->all_data(),
+      'title' => 'Informasi'
+    );
     return view('user/v_pengunjungInformasi', $data);
 	}
 

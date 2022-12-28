@@ -5,14 +5,15 @@
     <h1 class="h2" style="margin:10px 0px 16px 0px;">Bantuan</h1>
   </div>
   <div class="alert alert-primary" role="alert">
-    Beli tiket bus menggunakan website ini, <a href="#">Klik disini!</a>
+    Cek jadwal bus menggunakan website ini, <a href="<?php echo site_url('menu/bus_penumpang'); ?>">Klik disini!</a>
   </div>
+  <p>Apabila anda mempunyai pertanyaan atau masalah di saat menggunakan website ini, baca FAQ's atau hubungi admin <a href="https://wa.me/0895631651536?text=Halo,%20Saya%20ingin%20bertanya%20terkait%20penggunaan%20website!">disini!</a>
   <div class="row justify-content-between" style="margin-bottom:10px;margin-top:24px;">
     <div class="col-6">
       <h4>FAQ's (Frequently Asked Questions)</h4>
     </div>
   </div>
-  <div class="accordion" id="accordionExample" style="margin-bottom:60px;">
+  <div class="accordion" id="accordionExample" style="margin-bottom:100px;">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
