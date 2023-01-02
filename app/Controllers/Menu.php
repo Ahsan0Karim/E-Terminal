@@ -1,12 +1,14 @@
 <?php namespace App\Controllers;
 use App\Models\ModelInformasi;
 use App\Models\ModelJadwal;
+use App\Models\ModelKupon;
 class Menu extends BaseController
 {
 
   public function __construct(){
     $this->ModelInformasi = new ModelInformasi();
     $this->ModelJadwal = new ModelJadwal();
+    $this->ModelKupon = new ModelKupon();
   }
 	
   // ADMIN
@@ -56,7 +58,10 @@ class Menu extends BaseController
     if(session()->get('level')<>3){
       return redirect()->to(base_url('home/user'));
     }
-    $data['title'] = 'Kupon';
+    $data = array(
+      'kupon' => $this->ModelKupon->all_data(),
+      'title' => 'Kupon'
+    );
     return view('user/v_pengunjungKupon', $data);
 	}
 

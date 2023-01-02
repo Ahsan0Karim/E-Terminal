@@ -7,4 +7,14 @@
   <div class="alert alert-primary" role="alert">
     Cek jadwal bus menggunakan website ini, <a href="<?php echo site_url('menu/bus_penumpang'); ?>">Klik disini!</a>
   </div>
+  <?php
+    foreach($kupon as $key => $value){ ?>
+  <div class="card border-dark mb-3">
+    <div class="card-header">Kupon</div>
+    <div class="card-body text-dark">
+      <h5 class="card-title">ID kupon: <?= $value['kd_kupon']; ?></h5>
+      <p class="card-text"><?= $value['tgl_dibuat']; ?></p>
+    </div>
+  </div>
+  <?php } ?>
 <?= $this->include('layout-penumpang/footer') ?>
